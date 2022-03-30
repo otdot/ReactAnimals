@@ -11,7 +11,7 @@ class App extends Component {
       return (
         <AnimalCard
           key={animal.name}
-          imgsrc={`http://source.unsplash.com/${animal.name}`}
+          imgsrc={`http://source.unsplash.com/170x270/?animal/${animal.name}`}
           name={animal.name}
           count={animal.likes}
         />

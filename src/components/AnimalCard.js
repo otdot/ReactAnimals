@@ -5,7 +5,7 @@ const AnimalCard = (props) => {
   return (
     <div className={classes.AnimalCard}>
       <img src={props.imgsrc} />
-      <Button text="add like" />
+      <Button click={props.func} text="add like" />
       <h2>{props.name}</h2>
       <p>{props.count}</p>
     </div>

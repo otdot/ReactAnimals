@@ -14,7 +14,7 @@
 }
 
 .AnimalCard:hover > img {
-  filter: saturate(2);
+  filter: drop-shadow(0 8px 12px yellow) saturate(1);
   box-shadow: 1px 1px 5px black;
 }
 
@@ -40,38 +40,6 @@
   left: 4px;
 }
 
-.thumb {
-  font-size: 3rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 1;
-}
-
-.addlikebutton:hover ~ .thumb {
-  animation: showThumb 3s ease-in-out 1;
-}
-
-@keyframes showThumb {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .addlikebutton {
   background-color: rgb(255, 123, 0);
   border: 0;
@@ -81,6 +49,12 @@
   position: absolute;
   bottom: 4px;
   right: 4px;
+}
+
+.addlikebutton:hover,
+.deletebutton:hover {
+  filter: saturate(2);
+  box-shadow: inset 2px 2px 6px black;
 }
 
 .deletebutton {

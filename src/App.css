@@ -27,3 +27,32 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.thumb {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+  animation: showThumb 2s ease-in-out 1;
+}
+
+@keyframes showThumb {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}

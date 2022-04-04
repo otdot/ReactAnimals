@@ -6,10 +6,23 @@ import { animals } from "./animals.js";
 class App extends Component {
   state = { animals: animals };
 
-  addLikeHandler = (name) => {
+  addLikeHandler = (e, name) => {
+    e.preventDefault();
+    // this.setState((state) => {
+    //   const updatedArr = state.animals.map((animal) => {
+    //     if (name === animal.name) {
+    //       return { ...animal, likes: animal.likes + 1 };
+    //     } else return animal;
+    //   });
+    //   return { animals: updatedArr };
+    // });
+
+    // or
+
     const updatedArr = this.state.animals.map((animal) => {
       if (name === animal.name) {
         animal.likes++;
+        e.currentTarget.nextElementSibling.classList.add("thumb");
       } else return animal;
     });
     return this.setState(updatedArr);
@@ -21,10 +34,10 @@ class App extends Component {
     );
     return this.setState({ animals: updatedArr });
 
-    //tai
+    //or
 
     // this.setState((state) => {
-    //   const updatedArr = this.state.animals.filter(
+    //   const updatedArr = state.animals.filter(
     //     (animal) => name !== animal.name
     //   );
     //   return { animals: updatedArr };
@@ -39,7 +52,7 @@ class App extends Component {
           imgsrc={`http://source.unsplash.com/170x270/?animal/${animal.name}`}
           name={animal.name}
           count={animal.likes}
-          func={() => this.addLikeHandler(animal.name)}
+          func={(e) => this.addLikeHandler(e, animal.name)}
           func2={() => this.deleteHandler(animal.name)}
         />
       );

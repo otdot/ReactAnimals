@@ -10,14 +10,14 @@ const AnimalCard = (props) => {
         click={props.func}
         text="add like"
       />
-      <p>👍</p>
+      <p className="thumbparagraph">👍</p>
       <Button
         style={classes.deletebutton}
         click={props.func2}
         text="remove card"
       />
       <h2>{props.name}</h2>
-      <p className={classes.count}>{props.count}</p>
+      <p className={classes.count}>Likes: {props.count}</p>
     </div>
   );
 };

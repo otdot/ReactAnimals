@@ -22,6 +22,7 @@ class App extends Component {
     const updatedArr = this.state.animals.map((animal) => {
       if (name === animal.name) {
         animal.likes++;
+        const thumbparagraph = e.currentTarget.nextElementSibling;
         e.currentTarget.nextElementSibling.classList.add("thumb");
       } else return animal;
     });
@@ -45,6 +46,11 @@ class App extends Component {
   };
 
   render() {
+    setTimeout(() => {
+      document
+        .querySelectorAll(".thumbparagraph")
+        .forEach((thumb) => (thumb.classList = "thumbparagraph"));
+    }, 1000);
     const animalsList = this.state.animals.map((animal) => {
       return (
         <AnimalCard

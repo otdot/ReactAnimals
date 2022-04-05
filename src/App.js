@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import "./App.css";
 import AnimalCard from "./components/AnimalCard";
 import { animals } from "./animals.js";
+import { Header } from "./components/Header";
 
 class App extends Component {
-  state = { animals: animals };
+  state = { animals: animals, search: "" };
+
+  searchHandler = (e) => {
+    console.log({ search: e.target.value });
+    this.setState({ search: e.target.value });
+  };
 
   addLikeHandler = (e, name) => {
     e.preventDefault();
@@ -45,15 +51,23 @@ class App extends Component {
     // });
   };
 
-  render() {
+  resetThumbClasses = () => {
     setTimeout(() => {
       document
         .querySelectorAll(".thumbparagraph")
         .forEach((thumb) => (thumb.classList = "thumbparagraph"));
     }, 1000);
-    const animalsList = this.state.animals.map((animal) => {
+  };
+
+  render() {
+    this.resetThumbClasses();
+    const filteredAnimalsList = this.state.animals.filter((animal) =>
+      animal.name.toLowerCase().includes(this.state.search.toLowerCase())
+    );
+    const animalsList = filteredAnimalsList.map((animal) => {
       return (
         <AnimalCard
+          searchterm={this.state.search}
           key={animal.name}
           imgsrc={`http://source.unsplash.com/170x270/?animal/${animal.name}`}
           name={animal.name}
@@ -64,7 +78,17 @@ class App extends Component {
       );
     });
 
-    return <div className="container">{animalsList}</div>;
+    return (
+      <div>
+        <Header
+          animalcount={
+            this.state.search ? animalsList.length : this.state.animals.length
+          }
+          change={this.searchHandler}
+        />
+        <div className="container">{animalsList}</div>
+      </div>
+    );
   }
 }
 

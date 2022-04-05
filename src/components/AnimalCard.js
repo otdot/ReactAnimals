@@ -4,6 +4,7 @@ import classes from "./AnimalCard.module.css";
 const AnimalCard = (props) => {
   return (
     <div data-name={props.name} className={classes.AnimalCard}>
+      <p className={classes.text}>{props.searchterm}</p>
       <img src={props.imgsrc} />
       <Button
         style={classes.addlikebutton}

@@ -40,6 +40,11 @@
   left: 4px;
 }
 
+.text {
+  position: absolute;
+  bottom: 2rem;
+}
+
 .addlikebutton {
   background-color: rgb(255, 123, 0);
   border: 0;

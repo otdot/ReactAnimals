@@ -4,6 +4,7 @@ import AnimalCard from "./components/AnimalCard";
 import { animals } from "./animals.js";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import Testcomponent from "./components/Testcomponent";
 
 class App extends Component {
   state = { animals: animals, search: "" };
@@ -88,6 +89,7 @@ class App extends Component {
           change={this.searchHandler}
         />
         <div className="container">{animalsList}</div>
+        <Testcomponent />
         <Footer />
       </div>
     );

@@ -94,6 +94,7 @@ class App extends Component {
         <Sidebar />
         <p>testing rebasing more</p>
         <p>testing rebasing from master</p>
+        <p>testing rebasing from dev</p>
         <Footer />
       </div>
     );

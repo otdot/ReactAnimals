@@ -4,7 +4,11 @@ import AnimalCard from "./components/AnimalCard";
 import { animals } from "./animals.js";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+<<<<<<< HEAD
 import Testcomponent from "./components/Testcomponent";
+=======
+import Sidebar from "./components/Sidebar";
+>>>>>>> 89ce46e (testing rebasing)
 
 class App extends Component {
   state = { animals: animals, search: "" };
@@ -81,7 +85,7 @@ class App extends Component {
     });
 
     return (
-      <div>
+      <div style={{ position: "relative" }}>
         <Header
           animalcount={
             this.state.search ? animalsList.length : this.state.animals.length
@@ -89,7 +93,11 @@ class App extends Component {
           change={this.searchHandler}
         />
         <div className="container">{animalsList}</div>
+<<<<<<< HEAD
         <Testcomponent />
+=======
+        <Sidebar />
+>>>>>>> 89ce46e (testing rebasing)
         <Footer />
       </div>
     );

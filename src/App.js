@@ -92,6 +92,7 @@ class App extends Component {
         <div className="container">{animalsList}</div>
         <Testcomponent />
         <Sidebar />
+        <p>testing rebasing more</p>
         <Footer />
       </div>
     );
